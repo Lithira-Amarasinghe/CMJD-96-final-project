@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'admin-panel';
+
+  color = ''
+
+  changeColorToBlack(){
+    this.color = 'black'
+  }
+  changeColorToWhite(){
+    this.color = 'white'
+  }
 }
