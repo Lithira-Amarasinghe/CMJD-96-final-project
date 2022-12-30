@@ -1,15 +1,13 @@
 package com.ecommercewebsite.backend.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
-@AllArgsConstructor
+@AllArgsConstructor()
 @NoArgsConstructor
 @Getter
 @Setter
@@ -20,7 +18,25 @@ public class Items {
     private String name;
     private String description;
     private String mainCategory;
+
+    public Items(String id, String name, String description, String mainCategory, String subCategory, float price, int qty) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.mainCategory = mainCategory;
+        this.subCategory = subCategory;
+        this.price = price;
+        this.qty = qty;
+    }
+
     private String subCategory;
     private float price;
     private int qty;
+
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "item_id", referencedColumnName = "id")
+    private List<Image> image;
+
+
 }

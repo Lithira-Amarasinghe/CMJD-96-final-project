@@ -1,18 +1,17 @@
 package com.ecommercewebsite.backend.dto;
 
-
-import com.ecommercewebsite.backend.entity.Image;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class ItemsDto {
+@Getter
+@Setter
+public class ItemImageDto {
     private String id;
     private String name;
     private String description;
@@ -20,5 +19,5 @@ public class ItemsDto {
     private String subCategory;
     private float price;
     private int qty;
-    private List<Image> imageFiles;
+    private MultipartFile imageFile;
 }
