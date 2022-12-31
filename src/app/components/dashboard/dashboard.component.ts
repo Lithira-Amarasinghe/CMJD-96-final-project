@@ -8,7 +8,7 @@ import {ItemService} from "../../service/item-service/item.service";
 })
 export class DashboardComponent implements OnInit{
 
-  constructor(private itemService: ItemService) {
+  constructor() {
   }
 
   ngOnInit() {
