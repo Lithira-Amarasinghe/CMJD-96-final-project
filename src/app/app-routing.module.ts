@@ -19,7 +19,7 @@ import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.co
 import {SignUpComponent} from "./components/sign-up/sign-up.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: 'LoginComponent', pathMatch: "full"},
+  {path: '', redirectTo: 'login', pathMatch: "full"},
   {path: 'login', component: LoginComponent},
   {path: 'sign-up', component: SignUpComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
