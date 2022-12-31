@@ -45,6 +45,9 @@ table{
   height: auto;
 
 }
+table th:nth-child(5){
+  width: 800px;
+}
 tr{
   margin: 10px;
   border-radius: 15px;
@@ -57,10 +60,10 @@ tr:nth-child(odd){
   background-color: #f0f2f5;
 }
 tr:hover{
-  background-color: #ffb9b9;
+  background-color: #dedede;
 }
-
-
 td{
   width: 150px;
+  border-right:0.5px solid #d9d4d4;
+  padding: 10px;
 }

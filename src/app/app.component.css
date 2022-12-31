@@ -4,7 +4,7 @@
   /*justify-content: center;*/
   /*align-items: center;*/
   /*margin: 0;*/
-  height: 120% !important;
+  height: 500% !important;
 }
 
 .inner{
@@ -22,17 +22,19 @@
 /*  border-radius: 5px!important;*/
 /*}*/
 
-
+mat-sidenav-container{
+  height: 500%;
+}
 .active-side-nav{
-  background-color: #0f3e60 !important;
+  background-color: #a0cbe8 !important;
   font-weight: bold!important;
 }
 mat-sidenav{
   background-color: #10839d;
 }
-mat-sidenav-content{
-  background-color: white!important;
-}
+/*mat-sidenav-content{*/
+/*  background-color: white!important;*/
+/*}*/
 
 .form-field{
   width: 100%;
@@ -48,7 +50,7 @@ mat-nav-list a p{
   /*position: absolute;*/
 }
 mat-nav-list div:hover{
-  background-color: #650e3f;
+  background-color: #faf0cd;
 }
 /*mat-nav-list a:hover{*/
 /*  color: white;*/

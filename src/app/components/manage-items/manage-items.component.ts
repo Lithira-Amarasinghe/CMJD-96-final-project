@@ -68,7 +68,7 @@ export class ManageItemsComponent implements OnInit {
   searchItemById() {
     this.itemService.searchItem(this.searchItemByIdForm.get('id')?.value).subscribe(response => {
       console.log(response)
-      if(response.item == null){
+      if(response.object == null){
         this.saveUpdateItemForm.patchValue({
           id: null,
           name: null,
@@ -81,14 +81,14 @@ export class ManageItemsComponent implements OnInit {
         alert(this.searchItemByIdForm.get('id')?.value+" can't find ")
       }else {
         this.saveUpdateItemForm.patchValue({
-          id: response.item.id,
-          name: response.item.name,
-          description: response.item.description,
-          mainCategory: response.item.mainCategory,
-          subCategory: response.item.subCategory,
-          price: response.item.price,
-          qty: response.item.qty,
-          imageFile: response.item.imageFiles[0]
+          id: response.object.id,
+          name: response.object.name,
+          description: response.object.description,
+          mainCategory: response.object.mainCategory,
+          subCategory: response.object.subCategory,
+          price: response.object.price,
+          qty: response.object.qty,
+          imageFile: response.object.imageFiles[0]
         })
       }
     }, error => {
@@ -192,9 +192,9 @@ export class ManageItemsComponent implements OnInit {
   searchItemsBySearchText(searchText: string) {
     this.itemService.getAllItemsBySearchText(1, 1, this.searchItemsBySearchTextForm.get('searchText')?.value).subscribe(response => {
       console.log(response)
-      console.log(response.item.dataCount)
-      console.log(response.item)
-      this.itemData = response.item.list
+      console.log(response.object.dataCount)
+      console.log(response.object)
+      this.itemData = response.object.list
     }, error => {
       console.log(error)
     })

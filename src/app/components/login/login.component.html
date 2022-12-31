@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="outer">
+  <div class="login-form">
+    <form [formGroup]="loginForm">
+      <div class="save-update-item-form container">
+        <div class="row ">
+          <div class="col-4">
+            <mat-form-field style="width: 100%!important;" class="form-field" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input type="text" formControlName="id" matInput>
+              <mat-hint>min : 8 characters</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <mat-form-field style="width: 100%!important;" class="form-field" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input type="text" formControlName="name" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

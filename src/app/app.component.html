@@ -8,7 +8,7 @@
     color: white; height: 8vh;
     padding:10px;
     font-size: 2.5em">
-      Bloomindales Admin Panel
+      Calcalux Admin Panel
     </h1>
     <!--    <div class="main-categories container">-->
     <!--        <div class="row">-->
@@ -60,19 +60,19 @@
     <mat-sidenav-container>
       <mat-sidenav #sidenav [opened]="true" mode="side">
         <mat-nav-list>
-          <div (mouseover)="changeColorToWhite()" (mouseleave)="changeColorToBlack()">
+          <div>
             <a mat-list-item routerLink='/dashboard'  [routerLinkActive]="['active-side-nav']"><span [style.color]="color"><mat-icon>dashboard</mat-icon>Dashboard</span></a>
           </div>
-           <div (mouseover)="changeColorToWhite()" (mouseleave)="changeColorToBlack()">
+           <div>
             <a mat-list-item routerLink='/manage-items' [routerLinkActive]="['active-side-nav']"><span [style.color]="color"><mat-icon>category</mat-icon>Manage items</span></a>
            </div>
-          <div (mouseover)="changeColorToWhite()" (mouseleave)="changeColorToBlack()">
+          <div>
             <a mat-list-item href=""><span [style.color]="color"><mat-icon>insights</mat-icon>Charts</span></a>
           </div>
-          <div (mouseover)="changeColorToWhite()" (mouseleave)="changeColorToBlack()">
+          <div>
             <a mat-list-item  local_offer href=""><span [style.color]="color"><mat-icon>local_offer</mat-icon>Promotions</span></a>
           </div>
-          <div (mouseover)="changeColorToWhite()" (mouseleave)="changeColorToBlack()">
+          <div>
             <a mat-list-item href=""><span [style.color]="color"><mat-icon>settings</mat-icon>Settings</span></a>
           </div>
         </mat-nav-list>

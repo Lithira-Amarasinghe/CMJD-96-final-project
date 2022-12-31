@@ -10,10 +10,14 @@ export class AppComponent {
 
   color = ''
 
-  changeColorToBlack(){
-    this.color = 'black'
-  }
-  changeColorToWhite(){
-    this.color = 'white'
-  }
+  // changeColorToBlack(){
+  //   this.color = 'black'
+  // }
+  // changeColorToWhite(){
+  //   this.color = 'white'
+  // }
+
+
+
+
 }
