@@ -1,0 +1,92 @@
+<div class="outer">
+  <div class="add-item-form container">
+    <form [formGroup]="saveForm" (ngSubmit)="saveItem()">
+      <div class="row" style="margin: 0">
+
+        <div class="col-12">
+          <mat-form-field class="form-field" appearance="legacy">
+            <input formControlName="id" type="text" class="form-input" matInput placeholder="ID">
+          </mat-form-field>
+        </div>
+
+        <div class="col-12">
+          <mat-form-field class="form-field" appearance="legacy">
+            <input formControlName="name" type="text" matInput placeholder="Name">
+          </mat-form-field>
+        </div>
+
+        <div class="col-12">
+          <mat-form-field class="form-field" appearance="legacy">
+            <input formControlName="mainCategory" type="text" matInput placeholder="Main category">
+          </mat-form-field>
+        </div>
+
+        <div class="col-12">
+          <mat-form-field class="form-field" appearance="legacy">
+            <input formControlName="subCategory" type="text" matInput placeholder="Sub category">
+          </mat-form-field>
+        </div>
+
+        <div class="col-12">
+          <mat-form-field class="form-field" appearance="legacy">
+            <input formControlName="description" type="text" matInput placeholder="Description">
+          </mat-form-field>
+        </div>
+
+        <div class="col-12">
+          <mat-form-field class="form-field" appearance="legacy">
+            <input formControlName="price" type="text" matInput placeholder="Price">
+          </mat-form-field>
+        </div>
+
+        <div class="col-12">
+          <mat-form-field class="form-field" appearance="legacy">
+            <input formControlName="qty" type="text" matInput placeholder="Quantity">
+          </mat-form-field>
+        </div>
+
+<!--        <div class="col-12">-->
+<!--          <mat-form-field appearance="fill">-->
+<!--            <div>-->
+<!--              <mat-toolbar>-->
+<!--                &lt;!&ndash; Display files names &ndash;&gt;-->
+<!--                <input matInput [(ngModel)]="fileAttr" placeholder="Select an image"  name="name" />-->
+<!--                &lt;!&ndash; Browse Button &ndash;&gt;-->
+<!--                <button mat-flat-button color="primary" style="position:absolute;width:300px!important;">Select image for item</button>-->
+<!--              </mat-toolbar>-->
+<!--              &lt;!&ndash; Fetch selected filed on change &ndash;&gt;-->
+<!--              <input-->
+<!--                type="file"-->
+<!--                #fileInput-->
+<!--                id="uploadFile"-->
+<!--                (change)="uploadFileEvt($event)"-->
+<!--                name="uploadFile"-->
+<!--                multiple="multiple"-->
+<!--                accept="image/*"-->
+<!--              />-->
+<!--            </div>-->
+<!--          </mat-form-field>-->
+<!--        </div>-->
+        <input type="file" class="file-input" #uploadImage (change)="onFileSelected($event)">
+
+        <div class="col-12 file-upload">
+<!--          {{ fileName || 'No file uploaded yet'}}-->
+
+          <mat-form-field class="form-field" appearance="legacy">
+            <input formControlName="imgUrl" type="text" matInput value="{{fileName}}" contenteditable="false">
+          </mat-form-field>
+
+          <button mat-mini-fab color="primary" class="upload-btn" (click)="uploadImage.click()">
+            <mat-icon>attach_file</mat-icon>
+          </button>
+        </div>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" style="color:red"></mat-icon>
+
+
+        <div class="col-12">
+          <button [disabled]="saveForm.invalid" mat-raised-button color="primary">Add item</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
