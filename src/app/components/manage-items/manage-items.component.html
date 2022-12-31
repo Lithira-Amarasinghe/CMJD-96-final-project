@@ -1,0 +1,182 @@
+<p>manage-items works!</p>
+<div class="outer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <mat-button-toggle-group name="addUpdateToggle" (change)="changeValueToAddOrUpdate(toggleButton.value)"
+                                 #toggleButton=matButtonToggleGroup aria-label="Font Style">
+          <mat-button-toggle value="addNewItem">Add new item</mat-button-toggle>
+          <mat-button-toggle value="updateItem">Update item</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <div class="col-sm-7">
+        <form [formGroup]="searchItemByIdForm" (ngSubmit)="searchItemById()">
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field style="margin-right: 30px" appearance="outline">
+                <label for="searchBox">Search</label>
+                <input id="searchBox" type="text" formControlName="id" matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <button class="search-item" mat-raised-button color="primary">Search item using ID</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-12">
+        <p style="font-size: 2.5em; font-weight: bold; text-align: center">{{toggleBtnText}}</p>
+      </div>
+    </div>
+    <form [formGroup]="saveUpdateItemForm" (ngSubmit)="addOrUpdateItem()">
+      <div class="save-update-item-form container">
+        <div class="row">
+          <div class="col-4">
+            <mat-form-field style="width: 100%!important;" class="form-field" appearance="outline">
+              <mat-label>Id</mat-label>
+              <input type="text" formControlName="id" matInput>
+              <mat-hint>Required | min : 4 characters | Ex. I001</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="col-8">
+            <mat-form-field style="width: 100%!important;" class="form-field" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input type="text" formControlName="name" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 w-100">
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Description</mat-label>
+              <input type="text" formControlName="description" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Price</mat-label>
+              <input type="text" formControlName="price" matInput>
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Quantity</mat-label>
+              <input type="text" formControlName="qty" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Main category</mat-label>
+              <input type="text" formControlName="mainCategory" matInput>
+            </mat-form-field>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Sub category</mat-label>
+              <input type="text" formControlName="subCategory" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <!--              <mat-label>Upload image</mat-label>-->
+            <input formControlName="imageFile" multiple accept="image/png, image/jpeg, image/gif" type="file"
+                   style="display: none"
+                   (change)="onFileSelected($event)"
+                   #imageSelect>
+            <button style="margin:0 15px 15px 0" type="button" mat-raised-button (click)="imageSelect.click()">
+              <mat-icon>attach_file</mat-icon>
+              Upload image
+            </button>
+            <span style="font-weight: bold">{{imageName}}</span>
+            <!--            <img src="data:{{itemsDa.imageFiles[0].type}};base64,{{item.imageFiles[0].imageBytes}}>-->
+          </div>
+        </div>
+
+        <!--          <div class="col-3 file-upload">-->
+        <!--            &lt;!&ndash;          {{ fileName || 'No file uploaded yet'}}&ndash;&gt;-->
+
+        <!--            <mat-form-field class="form-field" >-->
+        <!--              <input formControlName="imgUrl" type="file"  #inputImage matInput value="{{fileName}}" contenteditable="false">-->
+        <!--            </mat-form-field>-->
+
+        <!--            <button mat-mini-fab color="primary" class="upload-btn" (click)="inputImage.click()">-->
+        <!--              <mat-icon>attach_file</mat-icon>-->
+        <!--            </button>-->
+        <!--          </div>-->
+      </div>
+
+      <div class="row">
+        <div class="col-2 btn-save-update">
+          <button type="submit" [disabled]="saveUpdateItemForm.invalid" mat-raised-button
+                  color="primary">{{toggleBtnValue}}</button>
+        </div>
+        <div class="col-2 btn-clear">
+          <button type="button" mat-raised-button color="primary" (click)="clearFormFields()">Clear</button>
+        </div>
+      </div>
+    </form>
+
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-2 search-by-text-label">Search items</div>
+        <div class="col-2">
+          <form [formGroup]="searchItemsBySearchTextForm" (ngSubmit)="searchItemsBySearchText('')">
+            <mat-form-field appearance="outline" floatLabel="auto">
+              <input placeholder="search items" formControlName="searchText" id="search-by-text-search-box" type="text"
+                     matInput
+                     (change)="searchItemsBySearchText('')">
+            </mat-form-field>
+          </form>
+        </div>
+        <div class="col-2">
+          <button type="submit" mat-raised-button color="primary">Search items</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <table style="margin: 10px 0 150px 0">
+      <thead>
+      <th>#</th>
+      <th>Id</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>Main Category</th>
+      <th>Sub Category</th>
+      <th>Delete</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of itemData; index as num">
+        <td>{{num + 1}}</td>
+        <td>{{item.id}}</td>
+
+        <td><img style="width: 150px; height: 150px"
+                 src="data:{{item.imageFiles[0].type}};base64,{{item.imageFiles[0].imageBytes}}"></td>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.qty}}</td>
+        <td>{{item.mainCategory}}</td>
+        <td>{{item.subCategory}}</td>
+        <td>
+          <button class="btn-remove-item" mat-raised-button color="warn" (click)="openDialog(item)">Remove</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

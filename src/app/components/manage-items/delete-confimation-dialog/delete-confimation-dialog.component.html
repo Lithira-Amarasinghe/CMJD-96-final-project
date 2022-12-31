@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Delete confimation</h1>
+
+<div mat-dialog-content>
+  <p>Do you want to delete ' {{data.id}} - {{data.name}} ' the item?</p>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false">No Thanks</button>
+  <button mat-button [mat-dialog-close]="true">Yes</button>
+</div>
