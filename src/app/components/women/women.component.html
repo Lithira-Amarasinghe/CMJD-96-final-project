@@ -1,0 +1,50 @@
+<!--<p>women works!</p>-->
+
+<div class="outer">
+  <div class="main-content container-fluid">
+    <div class="row">
+      <div class="main-content-categories d-none d-lg-block col-md-2">
+        <!--      <app-women-categories></app-women-categories>-->
+        <p>Women component categories</p>
+        <mat-grid-list cols="1" rowHeight="5:1">
+          <mat-grid-tile *ngFor="let item of subCategoryData">
+            <div class="grid-content item-image col-12" style="height: 30px">{{subCategoryData}}</div>
+            <div class="grid-content item-title col-12">{{item}}</div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="main-content-items-ads col-sm-12 col-md-10">
+        <div class="ad-1"></div>
+        <div class="ad-2"></div>
+        <div class="item-set-1 container-fluid">
+          <div class="row ">
+            <div class="item-container col-md-3 col-sm-5" *ngFor="let item of itemData">
+              <div class="container">
+                <div class="row g-2" style="position:relative;">
+                  <!--            <mat-grid-tile *ngFor="let item of itemData">-->
+                  <div style="height: 220px; word-wrap: normal; align-items: center" class="item-content item-image col-12 text-center">
+                    <img style="width:auto;height: 200px"
+                         src="data:{{item.imageFiles[0].type}};base64,{{item.imageFiles[0].imageBytes}}">
+                  </div>
+                  <hr>
+                  <div class="item-content item-title col-12 ">{{item.name}}</div>
+                  <div class="item-content item-description col-12">{{item.description}}</div>
+                  <div class="item-content item-description col-12">Quantity remain : {{item.qty}}</div>
+                  <div class="item-content item-price col-12">price : LKR {{item.price}}</div>
+                  <div class="item-content item-shipping-status col-12 ">Free shipping</div>
+
+                  <div style="margin-bottom:10px" class="item-content item-shipping-status col-12 ">
+                    <button (click)="addItemToCart(item.id)" mat-raised-button color="primary">Add to cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recommended-items">
+  </div>
+</div>
+

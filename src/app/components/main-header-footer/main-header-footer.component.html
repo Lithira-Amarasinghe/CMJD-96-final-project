@@ -1,0 +1,95 @@
+<div class="outer">
+  <div class="promotion-bar">
+    Take 20% off items labeled
+  </div>
+  <div class="services-top">
+    <div class="services-list">
+      <ul class="services-list-ul">
+        <li>STORES & EVENTS</li>
+        <li>SHOPPING SERVICES</li>
+        <li>LKR</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="log-and-search-bar container-fluid">
+    <div class="row">
+      <div class="log-container logo-search-cart col-lg-4">
+        <img style="width: 200px; border-radius: 8px" src="../assets/company-logo/Calcalux.png" alt="Calcalux">
+      </div>
+
+<!--      <div class="search-bar logo-search-bag col-4">-->
+<!--        <nav class="navbar bg-light">-->
+<!--          <div class="container-fluid">-->
+<!--            <form class="d-flex" role="search">-->
+<!--              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--              <button class="btn btn-outline-success" type="button">Search</button>-->
+<!--            </form>-->
+<!--          </div>-->
+<!--        </nav>-->
+<!--      </div>-->
+      <div class="bag logo-search-cart col-2"><a routerLink="/shopping-cart"><img
+        src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/null/external-shopping-cart-ecommerce-tanah-basah-glyph-tanah-basah.png"/>
+      </a>
+      </div>
+      <div class="col-4 logo-search-cart">
+        <a routerLink="/login">
+          <button mat-raised-button color="warn">Logout</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg bg-light navbar-main-categories">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav col-lg-12">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="" routerLink="/main/women"
+               routerLinkActive="active">WOMEN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/main/shoes" routerLinkActive="active">SHOES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/main/handbags" routerLinkActive="active">HANDBAGS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main/jewelry&accessories" routerLinkActive="active">JEWELRY &
+              ACCESSORIES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main/men" routerLinkActive="active">MEN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main/kids" routerLinkActive="active">KIDS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main/indoor" routerLinkActive="active">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main/sale" routerLinkActive="active">SALE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main/designer" routerLinkActive="active">DESIGNER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main/editorial" routerLinkActive="active">EDITORIAL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main/gifts" routerLinkActive="active">GIFTS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <hr>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,98 @@
+<div class="outer">
+  <div class="sign-up-form">
+    <form [formGroup]="signUpForm" (ngSubmit)="submitSignUpForm()">
+      <div class="sign-up-form-container container">
+        <div class="col-3 float-left">
+          <button mat-raised-button routerLink="/login" color="primary">Return to login page</button>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4 align-items-center" style="font-weight: bold; font-size: 1.5em">
+            Sign up
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+              <mat-label>Id</mat-label>
+              <input type="text" formControlName="id" matInput>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+              <mat-label>Fist name</mat-label>
+              <input type="text" formControlName="firstName" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+              <mat-label>Last name</mat-label>
+              <input type="text" formControlName="lastName" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+              <mat-label>Date of birth</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+              <mat-label>Country</mat-label>
+              <input type="text" formControlName="country" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input type="text" formControlName="email" matInput>
+            </mat-form-field>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-4">
+              <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input type="text" formControlName="username" matInput>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-4">
+              <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-4">
+              <button  type="submit" routerLink="{{routerLink}}" [disabled]="signUpForm.invalid" style="width: 100%; margin: 10px" color="primary"
+                       mat-raised-button>Sign up
+              </button>
+              <!--              <ng-template routerLink="main/home" #thenBlock>Content to render when condition is true.</ng-template>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+

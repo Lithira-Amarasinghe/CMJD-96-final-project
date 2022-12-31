@@ -1,0 +1,25 @@
+
+.main-content{
+  /*display: flex;*/
+  /*flex-direction: column;*/
+}
+
+.main-content-categories{
+  border: 1px solid red;
+  height: 800px;
+  /*flex-direction: column;*/
+  /*flex: 1;*/
+}
+.item-container{
+  border: 1px solid #2d2d2d;
+  border-radius: 5px;
+  margin: 5px;
+}
+.item-content{
+  font-size: 1.1em;
+}
+.item-content:hover{
+  cursor: pointer;
+}
+
+

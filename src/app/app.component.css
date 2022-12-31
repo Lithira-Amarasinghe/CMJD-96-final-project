@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*.promotion-bar{*/
+/*  background-color: black;*/
+/*  color: white;*/
+/*  width: 100%;*/
+/*  height: 40px;*/
+/*  text-align: center;*/
+/*  vertical-align: central;*/
+/*}*/
+/*.services-top{*/
+/*  justify-content: right;*/
+/*  display: flex;*/
+/*  margin: 10px;*/
+/*  border-bottom: black solid 0.8px*/
+/*}*/
+
+/*services-list ul{*/
+/*  list-style-type: none;*/
+/*  justify-content: right;*/
+
+/*  !*right: 0;*!*/
+
+/*}*/
+/*.log-and-search-bar{*/
+/*  display: flex;*/
+/*  height: 80px;*/
+/*}*/
+
+
+/*.log-container img{*/
+/*  width: 60%;*/
+/*  right: 5px;*/
+/*}*/
+/*.search-bar{*/
+/*  position: absolute;*/
+/*  width: 20%;*/
+/*  right: 80px;*/
+/*}*/
+
+/*.bag{*/
+/*  position: absolute;*/
+/*  right: 5px;*/
+/*}*/
+/*.bag img{*/
+/*  width: 40px;*/
+/*}*/
+/*.services-list-ul li{*/
+/*  display: inline;*/
+/*  margin: 20px;*/
+/*  font-size: 0.8em*/
+/*}*/
+
+/*.navbar-main-categories{*/
+/*  background-color: transparent!important;*/
+/*  !*width: auto!important;*!*/
+/*}*/
+
+/*.navbar-collapse{*/
+/*  color: black;*/
+/*}*/
+
+/*.nav-item{*/
+/*  margin: 0 2vw;*/
+/*  font-size: 0.9em;*/
+/*  color: black!important;*/
+/*  font-weight: bold;*/
+/*  border-radius: 5px!important;*/
+/*}*/
+/*.active{*/
+/*  background-color: #e3e3e3 !important;*/
+/*  border-radius: 5px!important;*/
+/*}*/
+
+/*.nav-item:hover{*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*html, body { height: 100%; }*/
+/*body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
+
+

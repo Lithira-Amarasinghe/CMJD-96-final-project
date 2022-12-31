@@ -1,0 +1,46 @@
+<div class="outer">
+  <div class="login-form">
+    <form [formGroup]="loginForm" style="margin-top: 50px">
+      <div class="save-update-item-form container">
+        <div class="row justify-content-center">
+          <div class="col-4" style="font-size: 1.5em; font-weight: bold">
+            <p>Login</p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input type="text" formControlName="username" matInput>
+              <mat-hint>min : 8 characters</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <mat-form-field style="width: 100%; margin: 10px" class="form-field" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input type="text" formControlName="password" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <button type="submit" (click)="getPasswordForUsername()" style="width: 100%; margin: 10px" color="primary" mat-raised-button>Login</button>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4" style="margin: 35px 0 0 0">
+            <p style="font-weight: bold">If you haven't logedin signUp/register now</p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <button  routerLink="/sign-up" style="width: 100%; margin: 10px" color="primary" mat-raised-button>Sign up</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
