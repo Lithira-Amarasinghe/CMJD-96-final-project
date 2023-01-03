@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "Items")
 public class Items {
 
     @Id
@@ -37,6 +38,9 @@ public class Items {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "item_id", referencedColumnName = "id")
     private List<Image> image;
+
+    @OneToMany(mappedBy = "items")
+    private List<ShoppingCartItem> shoppingCartItem;
 
 
 }

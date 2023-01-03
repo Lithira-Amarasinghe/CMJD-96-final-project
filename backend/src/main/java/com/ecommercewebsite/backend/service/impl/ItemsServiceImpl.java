@@ -10,9 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class ItemsServiceImpl implements ItemsService {
@@ -151,14 +149,17 @@ public class ItemsServiceImpl implements ItemsService {
 ////  }
 //
     @Override
-    public List<String> getAllSubCategoriesByMainCategory(String mainCategory) {
-        List<Items> itemList = itemsRepo.getAllSubCategoriesByMainCategory(mainCategory);
+    public Set<String> getAllSubCategoriesByMainCategory(String mainCategory) {
+        Set<String> itemList = itemsRepo.getAllSubCategoriesByMainCategory(mainCategory);
 
-        ArrayList<String> itemsSubCategoryList = new ArrayList();
-        for (Items item: itemList){
-            itemsSubCategoryList.add(item.getSubCategory());
+        HashSet<String> itemsSubCategorySet = new HashSet<>();
+//        for (Items item: itemList){
+//            itemsSubCategorySet.add(item.getSubCategory());
+//        }
+        for (String item: itemList){
+            itemsSubCategorySet.add(item);
         }
-        return itemsSubCategoryList;
+        return itemsSubCategorySet;
     }
 
     @Override
@@ -180,6 +181,5 @@ public class ItemsServiceImpl implements ItemsService {
         }
         return new PaginatedItemsDtos(itemsDtoList, itemList.size());
     }
-
 }
 

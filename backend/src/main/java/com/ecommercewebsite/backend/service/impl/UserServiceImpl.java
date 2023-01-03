@@ -21,15 +21,14 @@ public class UserServiceImpl implements UserService {
         return userRepo.save(
                 new User(
                         userDto.getId(),
-                        userDto.getFirstName(),
-                        userDto.getLastName(),
+                        userDto.getName(),
                         userDto.getDataOfBirth(),
-                        userDto.getCountry(),
+                        userDto.getAddress(),
                         userDto.getEmail(),
                         userDto.getUsername(),
                         userDto.getPassword()
                 )
-        ).getFirstName();
+        ).getName().toString();
     }
 
     @Override

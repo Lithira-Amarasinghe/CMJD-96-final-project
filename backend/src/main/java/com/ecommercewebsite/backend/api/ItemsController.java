@@ -92,8 +92,8 @@ public class ItemsController {
                 200, "Item data", itemsService.getItem(id)
         ), HttpStatus.OK);
     }
-
-    @GetMapping("/allItemsByMainCategory/{mainCategory}")
+//    allSubCategoriesByMainCategory
+    @GetMapping("/allSubCategoriesByMainCategory/{mainCategory}")
     public ResponseEntity<StandardResponse> getAllSubCategories(@PathVariable String mainCategory) {
         return new ResponseEntity<>(new StandardResponse(
                 200, "Item data found", itemsService.getAllSubCategoriesByMainCategory(mainCategory)

@@ -1,13 +1,10 @@
 package com.ecommercewebsite.backend.entity;
 
-import com.ecommercewebsite.backend.dto.Orders;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -16,28 +13,30 @@ import java.util.List;
 @Setter
 public class User{
     @Id
+    @Column(name = "user_id")
     private String id;
-    private String firstName;
-    private String lastName;
+    @Embedded
+    private Name name;
     private String dataOfBirth;
-    private String country;
+    @Embedded
+    private Address address;
     private String email;
     private String username;
     private String password;
 
-    public User(String id, String firstName, String lastName, String dataOfBirth, String country, String email, String username, String password) {
+    public User(String id, Name lastName, String dataOfBirth, Address address, String email, String username, String password) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.dataOfBirth = dataOfBirth;
-        this.country = country;
+        this.address = address;
         this.email = email;
         this.username = username;
         this.password = password;
     }
 
+    @OneToOne(mappedBy = "user")
+    private ShoppingCart shoppingCart;
 
     @OneToMany(mappedBy = "user")
-    private List<Orders> order;
-
+    private List<Orders> orders;
 }

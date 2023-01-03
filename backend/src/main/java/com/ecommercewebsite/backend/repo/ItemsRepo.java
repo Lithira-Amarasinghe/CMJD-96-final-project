@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Set;
 
 
 @Repository
@@ -27,6 +28,6 @@ public interface ItemsRepo extends JpaRepository<Items, String> {
     @Query(value = "SELECT * FROM Items WHERE main_category LIKE ?1", nativeQuery = true)
     List<Items> getAllItemsByMainCategory(String main_category);
 
-    @Query(value = "SELECT * FROM Items WHERE main_category LIKE ?1", nativeQuery = true)
-    List<Items> getAllSubCategoriesByMainCategory(String mainCategory);
+    @Query(value = "SELECT DISTINCT sub_category FROM Items WHERE main_category LIKE ?1", nativeQuery = true)
+    Set<String> getAllSubCategoriesByMainCategory(String mainCategory);
 }
