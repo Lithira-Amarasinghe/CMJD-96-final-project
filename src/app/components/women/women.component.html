@@ -3,13 +3,12 @@
 <div class="outer">
   <div class="main-content container-fluid">
     <div class="row">
-      <div class="main-content-categories d-none d-lg-block col-md-2">   <!---->
+      <div class="main-content-categories text- d-none d-lg-block col-md-2">   <!---->
         <!--      <app-women-categories></app-women-categories>-->
-        <p>Women sub categories</p>
+        <p style="text-align: center; font-weight: bold; font-size: 1.5em">Sub categories</p>
         <mat-grid-list cols="1" rowHeight="5:1">
           <mat-grid-tile *ngFor="let item of subCategoryData">
-            <div class="grid-content item-image col-12" style="height: 30px">{{subCategoryData}}</div>
-            <div class="grid-content item-title col-12">{{item}}</div>
+            <div class="grid-content item-image col-12" style="height: 30px; text-align: left; font-size: 1.3em">{{item}}</div>
           </mat-grid-tile>
         </mat-grid-list>
       </div>

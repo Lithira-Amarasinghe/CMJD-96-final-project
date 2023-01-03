@@ -18,6 +18,7 @@ import {IndoorComponent} from "./components/indoor/indoor.component";
 import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.component";
 import {SignUpComponent} from "./components/sign-up/sign-up.component";
 
+
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: "full"},
   {path: 'login', component: LoginComponent},
