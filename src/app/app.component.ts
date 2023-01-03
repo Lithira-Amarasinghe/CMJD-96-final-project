@@ -17,7 +17,4 @@ export class AppComponent {
   //   this.color = 'white'
   // }
 
-
-
-
 }
