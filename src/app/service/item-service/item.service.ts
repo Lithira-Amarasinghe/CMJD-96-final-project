@@ -14,7 +14,7 @@ export class ItemService {
   }
 
   getAllSubCategoriesByMainCategory(mainCategory: string): Observable<any> {
-    return this.http.get('http://localhost:8080/api/v1/items/allItemsByMainCategory/'+mainCategory);
+    return this.http.get('http://localhost:8080/api/v1/items/allSubCategoriesByMainCategory/'+mainCategory);
   }
 
   getAllItemsByMainCategory(mainCategory: string): Observable<any>{

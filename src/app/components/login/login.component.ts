@@ -9,8 +9,11 @@ import {UserService} from "../../service/user/user.service";
 })
 export class LoginComponent implements OnInit {
 
+  toHomeIfPassowrdMatches = ''
+
   constructor(private userService: UserService) {
   }
+
 
   ngOnInit(): void {
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from "../../service/user/user.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserDto} from "../../dtos/UserDto";
-import {UserService} from "../../service/user/user.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -9,6 +9,7 @@ import {UserService} from "../../service/user/user.service";
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+
   hide = true;
   isSaved = false;
   routerLink = '/sign-up'

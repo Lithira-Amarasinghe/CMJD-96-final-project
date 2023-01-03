@@ -14,7 +14,6 @@ export class WomenComponent implements OnInit {
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
-
     this.getAllItemsByMainCategory('women')
     this.getAllWomenSubCategoriesByMainCategory('women');
   }
@@ -35,7 +34,7 @@ export class WomenComponent implements OnInit {
   getAllWomenSubCategoriesByMainCategory(mainCategory: string) {
     this.itemService.getAllSubCategoriesByMainCategory(mainCategory).subscribe(response => {
         console.log(response)
-        this.subCategoryData = response.object.list;
+        this.subCategoryData = response.object;
         console.log(this.subCategoryData)
       }
       , error => {
